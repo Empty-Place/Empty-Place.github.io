@@ -4,22 +4,22 @@
 	</head>
 	
 	<script>
+		function back(){
+			history.go (-1);
+		}
 		function showDate(){
 			document.write(Date());
-			<button type="button" onclick="start()">返回</button>
-		}
-		function start(){
-			<h1>Hello 这是Medane06的lj 网站</h1>
-                        <p>此网站会持续更新</p>
-                        <p>很高兴你来到这里, 你可以在以下的网站找到我</p><br><br>
-                
-                        <p>目前有这些功能：</p>
-                        <button type="button" onclick="showDate()">1.显示日期</button>
+			<button type="button" onclick="back()">返回</button>
 		}
 	</script>
 	
 	<body>
-		start()
+		<h1>Hello 这是Medane06的lj 网站</h1>
+                <p>此网站会持续更新</p>
+                <p>很高兴你来到这里, 你可以在以下的网站找到我</p><br><br>
+                
+                <p>目前有这些功能：</p>
+                <button type="button" onclick="showDate()">1.显示日期</button>
 		
 	</body>
 </html>
