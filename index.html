@@ -3,21 +3,21 @@
 		<meta charset='utf-8'>
 	</head>
 	
-	<script>
-		function back(){
-			history.go (-1);
-			window.location.reload();
-		}
-		function showDate(){
-			document.write(Date());
-			var oDivNode = document.getElementById("div_1");
-			oDivNode.innerHTML = "<button type="button" onclick="back()">返回</button>;
-		}
-	</script>
-	
 	<body>
+		<script>
+			function showDate(){
+				document.write(Date());
+				var oButNode = document.createElement("input");
+				oButNode.type = "button";
+				oButNode.value = "a new button";
+				//获取div节点
+				var oDivNode = document.getElementById("div_1");
+				//将按钮添加进节点
+				oDivNode.appendChild(oButNode);
+			}
+		</script>
 		<h1>Hello 这是Medane06的lj 网站</h1>
-                <p>此网站会持续更新</p>
+               	<p>此网站会持续更新</p>
                 <p>很高兴你来到这里, 你可以在以下的网站找到我</p><br><br>
                 
                 <p>目前有这些功能：</p>
