@@ -5,15 +5,12 @@
 	
 	<body>
 		<script>
+			function back(){
+				window.history.bac0k();
+			}
 			function showDate(){
 				document.write(Date());
-				var oButNode = document.createElement("input");
-				oButNode.type = "button";
-				oButNode.value = "a new button";
-				//获取div节点
-				var oDivNode = document.getElementById("div_1");
-				//将按钮添加进节点
-				oDivNode.appendChild(oButNode);
+				document.write("<button type="button" onclick="back">返回</button>");
 			}
 		</script>
 		<h1>Hello 这是Medane06的lj 网站</h1>
