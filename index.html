@@ -4,7 +4,13 @@
 		
 		<style>
 		body {
-			background-image: url("backIMG.jpg");
+			var backnum=Math.floor((Math.random()*2)+1);
+			if(backnum/2!=0){
+				background-image: url("backIMG1.jpg");
+			}
+			else if(backnum/2==0){
+				background-image: url("backIMG2.jpg");
+			}
 		} 
 		</style>
 	</head>
