@@ -32,6 +32,9 @@
                 			xmlHttp.send();
                 			xmlHttp.onreadystatechange = doResult; //设置回调函数                 
             			}
+				else if(xmlHttp == null){
+					windows.alert("error!");
+				}
             			function doResult() {
                 			if (xmlHttp.readyState == 4) { //4表示执行完成
                     				if (xmlHttp.status == 200) { //200表示执行成功
