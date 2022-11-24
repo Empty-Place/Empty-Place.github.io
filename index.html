@@ -11,40 +11,39 @@
 		<title>空白之地</title>
 		
 		<style>
-		body {
-			background-image: url("backIMG2.jpg");
-		} 
+			body {
+				background-image: url("backIMG2.jpg");
+			} 
 		</style>
+				
+								    
+								    
+								    
+		<script>
+			function abb(){
+				document.write(updatelog);
+			}
+		</script>
 	</head>
 	
 	<body>
+		updatelog="		version                         about                                                          time     <br>
+		_________________________________________________________________________________________________________________________<br>
+		?                           基本框架                                                   2022.11.24凌晨2:36<br>
+		?                           优化；背景                                                 2022.11.24凌晨3:17<br>
+		Beta_1.1                     解决背景图片有时不显示                                       2022.11.24凌晨4.19<br>
+  		Beta_1.0                     添加版本号；优化搜索引擎内容;添加记录库                       2022.11.24凌晨3:42<br>
+		_________________________________________________________________________________________________________________________<br>"
+
 		
-		<script type="updatelog.txt" >
-        		function ajax() {
-            			var xmlHttp = null;
-            			if (window.ActiveXObject) {
-                			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-            	        	} else if (window.XMLHttpRequest) {
-                			xmlHttp = new XMLHttpRequest();
-                        	}
-            			if (xmlHttp != null) {
-                			xmlHttp.open("get", "songs.txt", true);
-                			xmlHttp.send();
-                			xmlHttp.onreadystatechange = doResult; //设置回调函数                 
-            			}
-				else if(xmlHttp == null){
-					windows.alert("error!");
-				}
-            			function doResult() {
-                			if (xmlHttp.readyState == 4) { //4表示执行完成
-                    				if (xmlHttp.status == 200) { //200表示执行成功
-                        				document.getElementById("resText").innerHTML = xmlHttp.responseText;
-                    				}
-            				}
-        			}
-			}
-		}
-		</script>
+							    
+							    
+							    
+
+
+
+  
+
 		
 		<!--公告-->
 		<h1><b>Hello 这里是空白之地</b></h1>
@@ -62,11 +61,8 @@
 		
 		<!--功能-->
 		<p><b>目前有这些功能：</b></p>
-                <form id="form1" runat="server">
-        		<div id="resText"></div>
-        		<input type="button" value="点击获得文本内容" οnclick="ajax();"/>
-    		</form>
-		
+		<input type="button" value="点击获得文本内容" οnclick="abb();"/>	
+			
 		
 		<!--功能-->
 		
