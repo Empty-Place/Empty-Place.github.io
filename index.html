@@ -19,16 +19,28 @@
 	
 	<body>
 		
-		<script>
-			function back(){
-				window.history.bac0k();
+		<script type="text/javascript" >
+        		function ajax() {
+            			var xmlHttp = null;
+            			if (window.ActiveXObject) {
+                			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            	        	} else if (window.XMLHttpRequest) {
+                			xmlHttp = new XMLHttpRequest();
+                        	}
+            			if (xmlHttp != null) {
+                			xmlHttp.open("get", "songs.txt", true);
+                			xmlHttp.send();
+                			xmlHttp.onreadystatechange = doResult; //设置回调函数                 
+            			}
+            			function doResult() {
+                			if (xmlHttp.readyState == 4) { //4表示执行完成
+                    				if (xmlHttp.status == 200) { //200表示执行成功
+                        				document.getElementById("resText").innerHTML = xmlHttp.responseText;
+                    				}
+            				}
+        			}
 			}
-			<!--显示日期-->
-			function showDate(){
-				document.write(Date());
-				document.write("<button type="button" onclick="back">返回</button>");
-			}
-			<!--显示日期-->
+		}
 		</script>
 		
 		<!--公告-->
@@ -47,7 +59,10 @@
 		
 		<!--功能-->
 		<p><b>目前有这些功能：</b></p>
-                <button type="button" onclick="showDate()"><b>1.显示日期<b></button>
+                <form id="form1" runat="server">
+        		<div id="resText"></div>
+        		<input type="button" value="点击获得文本内容" οnclick="ajax();"/>
+    		</form>
 		
 		
 		<!--功能-->
