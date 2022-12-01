@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+body
+{
+font-size:75%;
+font-family:verdana,arial,'sans serif';
+background-color:#FFFFF0;
+color:#000080;
+margin:10px;
+}
+
+h1 {font-size:200%;}
+h2 {font-size:140%;}
+h3 {font-size:110%;}
+
+th {background-color:#ADD8E6;}
+
+ul {list-style:circle;}
+ol {list-style:upper-roman;}
+
+a:link {color:#000080;}
+a:hover {color:red;}
+</style>
+<head>
+<body>
+<h1>Medane06</h1>
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid #c3c3c3;"></canvas>
+<script type="text/javascript">
+var c=document.getElementById("myCanvas");
+var time = 160 ;
+var cxt=c.getContext("2d");
+var x = y = 8;
+var a = 0;
+var t = 20;
+var map = []; 
+var size = 8; 
+var direction = 2; 
+interval = window.setInterval(set_game_speed, time);
+function set_game_speed(){ 
+switch(direction){
+case 1:y = y-size;break;
+case 2:x = x+size;break;
+case 0:x = x-size;break;
+case 3:y = y+size;break;
+}
+if(x>400 || y>400 || x<0 || y<0){
+alert(" 你怎么这怎么菜？");window.location.reload();
+}
+for(var i=0;i<map.length;i++){
+if( parseInt(map[i].x)==x && parseInt(map[i].y)==y){
+alert("菜，撞到自己了");window.location.reload();
+}
+}
+if (map.length>t) { 
+var cl = map.shift();
+cxt.clearRect(cl['x'], cl['y'], size, size);
+};
+map.push({'x':x,'y':y});
+cxt.fillStyle = "#006699";
+cxt.strokeStyle = "#006699";
+cxt.fillRect(x, y, size, size);
+if((a*8)==x && (a*8)==y){
+rand_frog();t++;
+}
+}
+document.onkeydown = function(e) {
+var code = e.keyCode - 37;
+switch(code){
+case 1 : direction = 1;break;//上
+case 2 : direction = 2;break;//右
+case 3 : direction = 3;break;//下
+case 0 : direction = 0;break;//左
+}
+}
+function rand_frog(){
+a = Math.ceil(Math.random()*50);
+cxt.fillStyle = "#000000";
+cxt.strokeStyle = "#000000";
+cxt.fillRect(a*8, a*8, 8, 8);
+}
+
+rand_frog();
+</script>
+</body>
+</html>
