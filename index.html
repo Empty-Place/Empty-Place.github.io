@@ -48,10 +48,12 @@ case 3:y = y+size;break;
 }
 if(x>400 || y>400 || x<0 || y<0){
 alert(" 你怎么这怎么菜？");window.location.reload();
+history.go(0);
 }
 for(var i=0;i<map.length;i++){
 if( parseInt(map[i].x)==x && parseInt(map[i].y)==y){
-alert("菜，撞到自己了");window.location.reload();
+alert("你撞到自己了，真菜");window.location.reload();
+history.go(0);
 }
 }
 if (map.length>t) { 
